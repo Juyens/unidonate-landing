@@ -164,16 +164,18 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   header nav{ display:none; position:absolute; right:18px; top:calc(100% + 8px); z-index: 60; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px; box-shadow: var(--shadow); flex-direction: column; gap: 8px; min-width: 220px; }
   header nav.open { display: flex; }
   
+  /* Ajustes para la página de ayuda en móvil */
   .help-page {
-    padding: 24px 16px; /* Restauramos un padding razonable en móvil */
+    padding: 16px; /* Restauramos un padding alrededor del contenedor del chat */
     align-items: stretch;
   }
   .chat-container {
-    height: calc(100vh - var(--header-height) - 48px - var(--footer-height)); /* Calcula dinámicamente el alto */
+    /* ✨ CORRECCIONES CLAVE: Restauramos los estilos del contenedor del chat en móvil ✨ */
+    height: calc(100vh - var(--header-height) - 32px - var(--footer-height)); /* Ajusta height según tu footer */
     max-width: 100%;
-    border-radius: var(--radius); /* Mantenemos el border-radius */
-    box-shadow: 0 0 0 8px rgba(255,255,255,0.3), var(--shadow); /* Mantenemos la sombra */
-    border: 1px solid rgba(0,0,0,0.1); /* Mantenemos el borde */
+    border-radius: var(--radius); /* Mantener el border-radius original */
+    box-shadow: 0 0 0 8px rgba(255,255,255,0.3), var(--shadow); /* Mantener la sombra */
+    border: 1px solid rgba(0,0,0,0.1); /* Mantener el borde */
   }
   .chat-container__title { font-size: 20px; }
   .message-list { padding: 0 16px 16px; }
