@@ -84,39 +84,39 @@ header nav .Perfil.active, header nav .Perfil:hover { background:var(--primary-s
 }
 
 .message-form .input-wrapper{
-  flex:1 1 auto;      /* que sea el que se encoge */
-  min-width:0;        /* CLAVE para que pueda encoger sin romperse */
   display:flex;
   align-items:center;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius: var(--radius);
+  gap:8px;              /* espacio entre input y clip */
+  padding-right:8px;    /* que no quede pegado al borde */
+  overflow:visible;     /* por si el borde redondeado lo cortaba */
 }
 
+/* El input puede encogerse, pero no tapa al clip */
 #message-input{
   flex:1 1 auto;
-  min-width:0;        /* CLAVE: el input ya no empuja */
-  width:100%;
-  border:none;
+  min-width:0;          /* CLAVE para que se encoja y deje ver el clip */
+  height:44px;          /* altura cómoda táctil */
+}
+
+/* El clip NO se encoge ni estira raramente */
+.attach-btn{
+  flex:0 0 auto;        /* CLAVE: tamaño intrínseco */
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;         /* hit area táctil */
+  border:0;
   background:transparent;
-  padding:14px 16px;
-  font-size:16px;
   outline:none;
 }
 
-.send-btn{
-  flex:0 0 auto;      /* no se estira ni se encoge raro */
-  white-space:nowrap; /* evita salto de línea del texto */
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  padding:0 24px;
-  font-size:16px;
-  font-weight:600;
-  border-radius: var(--radius);
-  cursor:pointer;
+.attach-btn svg{
+  width:22px;
+  height:22px;
+  flex:0 0 auto;        /* que no se comprima */
+  fill:var(--muted);
+  pointer-events:none;
 }
-.send-btn:hover{ background:var(--primary-strong); }
 
 /* ===== Footer (UNIFICADO) ===== */
 footer{
