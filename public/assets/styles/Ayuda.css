@@ -171,7 +171,7 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
     gap: 8px;
   }
   #message-input {
-    padding: 12px 14px;
+    min-width: 0; /* Permite que el input se encoja correctamente */
   }
   .send-btn {
     padding: 0 20px;
