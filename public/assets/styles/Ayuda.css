@@ -29,6 +29,8 @@ header nav .Perfil.active, .Perfil:hover{ background: #1aad6b;}
 .profile-popover__list a:hover{ background:#f8fafc; }
 .profile-popover__list a.active-profile-link { color: var(--primary-strong); font-weight: 600; }
 
+
+
 .btn-logout {
   display: block; /* Le decimos que ocupe su propia línea */
   width: 80%; /* Mantenemos el ancho que definiste */
@@ -165,6 +167,11 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   .chat-container { height: 80vh; }
 
   footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
+
+  .input-wrapper {
+    flex-shrink: 1; /* Permite que el input-wrapper se encoja si es necesario */
+    min-width: 0;   /* Asegura que pueda reducir su tamaño */
+  }
 
   .message-form {
     padding: 12px;
