@@ -74,13 +74,49 @@ header nav .Perfil.active, header nav .Perfil:hover { background:var(--primary-s
 .message--sent { background-color: var(--sent-bg); align-self: flex-end; border-bottom-right-radius: 4px; }
 
 /* Formulario de Envío */
-.message-form { display: flex; gap: 12px; padding: 16px 24px; border-top: 1px solid var(--line); background-color: #f8fafc; }
-.input-wrapper { flex-grow: 1; display: flex; align-items: center; background-color: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
-#message-input { flex-grow: 1; border: none; background: transparent; padding: 14px 16px; font-size: 16px; outline: none; }
-.attach-btn { background: none; border: none; padding: 12px; cursor: pointer; }
-.attach-btn svg { width: 24px; height: 24px; fill: var(--muted); }
-.send-btn { background-color: var(--primary); color: white; border: none; padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: var(--radius); cursor: pointer; }
-.send-btn:hover { background-color: var(--primary-strong); }
+.message-form{
+  display:flex;
+  gap:12px;
+  padding:16px 12px;
+  border-top:1px solid var(--line);
+  background:#f8fafc;
+  max-width:100%;
+}
+
+.message-form .input-wrapper{
+  flex:1 1 auto;      /* que sea el que se encoge */
+  min-width:0;        /* CLAVE para que pueda encoger sin romperse */
+  display:flex;
+  align-items:center;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+#message-input{
+  flex:1 1 auto;
+  min-width:0;        /* CLAVE: el input ya no empuja */
+  width:100%;
+  border:none;
+  background:transparent;
+  padding:14px 16px;
+  font-size:16px;
+  outline:none;
+}
+
+.send-btn{
+  flex:0 0 auto;      /* no se estira ni se encoge raro */
+  white-space:nowrap; /* evita salto de línea del texto */
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:0 24px;
+  font-size:16px;
+  font-weight:600;
+  border-radius: var(--radius);
+  cursor:pointer;
+}
+.send-btn:hover{ background:var(--primary-strong); }
 
 /* ===== Footer (UNIFICADO) ===== */
 footer{
@@ -177,4 +213,15 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   .chat-window { height: calc(100vh - 69px); border-radius: 0; } /* Ocupa toda la pantalla en móvil */
 
   footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
+}
+
+@media (max-width: 860px){
+  .message-form{ gap:8px; padding:12px; }
+  .send-btn{ padding:0 16px; }
+}
+
+/* Si tu teléfono es MUY angosto (≤360px), apila el botón debajo */
+@media (max-width: 360px){
+  .message-form{ flex-wrap:wrap; }
+  .send-btn{ width:100%; margin-top:8px; }
 }
