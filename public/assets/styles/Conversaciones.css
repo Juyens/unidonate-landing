@@ -166,8 +166,5 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   .menu-toggle{ display:inline-block }
   header nav{ display:none; position:absolute; right:18px; top:calc(100% + 8px); background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:var(--shadow); flex-direction:column; gap:8px; min-width:220px; z-index:60; }
   header nav.open{ display:flex }
-  footer {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
-  }
+  footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
 }

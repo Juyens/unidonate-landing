@@ -186,10 +186,7 @@ footer small { grid-area: copy; color:#aab4c2; text-align: center; }
 }
 
 @media (max-width: 960px){
-  footer{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
-  }
+  footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
 }
 
 @media (max-width: 860px){

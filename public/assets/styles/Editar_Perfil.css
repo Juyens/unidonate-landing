@@ -16,6 +16,17 @@ a, button { color:inherit; text-decoration:none }
 .btn--danger { background-color: var(--danger-bg); color: var(--danger-text); width: 100%; }
 .card { background-color: var(--bg); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); }
 
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
 /* ===== Header y Popover (ESTILO UNIFICADO) ===== */
 header{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:10px 18px; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(10px); border-bottom:1px solid var(--line); }
 .Logo{ height:64px; }
@@ -164,8 +175,29 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
   .menu-toggle{ display:inline-block; }
-  header nav{ display:none; position:absolute; right:18px; top:calc(100% + 8px); z-index: 60; }
+  header nav{ 
+    display:none; 
+    position:absolute; 
+    right:18px; 
+    top:calc(100% + 8px); 
+    z-index: 60;
+    /* ✨ AÑADE ESTAS LÍNEAS QUE FALTABAN ✨ */
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+  }
+  
+  /* ✨ ESTA REGLA ES LA MÁS IMPORTANTE Y FALTABA POR COMPLETO ✨ */
+  header nav.open {
+    display: flex;
+  }
+
   .profile-grid { grid-template-columns: 1fr; }
   .fields-section { grid-template-columns: 1fr; }
-  
+  footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
 }
