@@ -165,32 +165,12 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
 
   footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
 
-  .help-page {
-    padding: 0; /* Quitamos el padding para que el chat ocupe todo */
-    align-items: stretch; /* Hacemos que el contenedor se estire */
-  }
-  .chat-container {
-    height: 100%; /* El contenedor del chat ocupa todo el alto del main */
-    max-width: 100%;
-    border-radius: 0; /* Sin bordes redondeados en móvil */
-    box-shadow: none;
-    border: none;
-  }
-  .chat-container__title {
-    font-size: 20px;
-  }
-  .message-list {
-    padding: 0 16px 16px;
-  }
-  .message-form {
-    padding: 12px;
-    gap: 8px;
-  }
-  #message-input {
-    padding: 12px 14px;
-  }
-  .send-btn {
-    padding: 0 20px;
-  }
+  .help-page { padding: 0; align-items: stretch; }
+  .chat-container { height: 100%; max-width: 100%; border-radius: 0; box-shadow: none; border: none; }
+  .chat-container__title { font-size: 20px; }
+  .message-list { padding: 0 16px 16px; }
+  .message-form { padding: 12px; gap: 8px; }
+  #message-input { padding: 12px 14px; }
+  .send-btn { padding: 0 20px; }
   
 }
