@@ -99,24 +99,8 @@ header nav .Perfil.active, header nav .Perfil:hover { background:var(--primary-s
 }
 
 /* El clip NO se encoge ni estira raramente */
-.attach-btn{
-  flex:0 0 auto;        /* CLAVE: tamaño intrínseco */
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px;         /* hit area táctil */
-  border:0;
-  background:transparent;
-  outline:none;
-}
-
-.attach-btn svg{
-  width:22px;
-  height:22px;
-  flex:0 0 auto;        /* que no se comprima */
-  fill:var(--muted);
-  pointer-events:none;
-}
+.attach-btn{ background: none; border: none; padding: 8px; cursor: pointer; }
+.attach-btn svg{ width: 24px; height: 24px; fill: var(--muted); }
 
 /* ===== Footer (UNIFICADO) ===== */
 footer{
