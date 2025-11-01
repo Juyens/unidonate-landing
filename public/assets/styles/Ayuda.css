@@ -65,13 +65,60 @@ header nav .Perfil.active, .Perfil:hover{ background: #1aad6b;}
 .typing-dot:nth-child(2) { animation-delay: 0.2s; }
 .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
-.message-form { display: flex; gap: 12px; padding: 20px; border-top: 1px solid var(--line); }
-.input-wrapper { flex-grow: 1; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 16px; background-color: #f8fafc; }
-#message-input { flex-grow: 1; border: none; background: transparent; padding: 14px 16px; font-size: 16px; outline: none; }
-.attach-btn { background: none; border: none; padding: 12px; cursor: pointer; }
-.attach-btn svg { width: 24px; height: 24px; fill: var(--muted); }
-.send-btn { background-color: var(--primary); color: white; border: none; padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: 12px; cursor: pointer; }
-/* ===== Footer (claro) ===== */
+
+.message-form{
+  position: sticky; bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;   /* campo (crece) + botón (auto) */
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+/* El wrapper del input NO debe forzar ancho; que pueda encogerse */
+.input-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;                 /* <- clave para que el input se encoja */
+  border: none;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 4px 6px;
+}
+
+/* El input ocupa todo el espacio disponible y puede encogerse */
+#message-input{
+  flex: 1 1 auto;
+  min-width: 0;                 /* <- sin esto “empuja” al botón */
+  border: none;
+  background: transparent;
+  padding: 12px 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Botón enviar con ancho flexible pero sin desbordar */
+.send-btn{
+  flex: 0 0 auto;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;          /* para que no salte de línea */
+}
+
+/* Ícono de adjuntar */
+.attach-btn{ background: none; border: none; padding: 8px; cursor: pointer; }
+.attach-btn svg{ width: 24px; height: 24px; fill: var(--muted); }
+
 footer{
   display:grid;
   grid-template-columns:auto 1fr 1fr 1fr;
@@ -173,16 +220,12 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
     min-width: 0;   /* Asegura que pueda reducir su tamaño */
   }
 
-  .message-form {
-    padding: 12px;
-    gap: 8px;
-  }
-  #message-input {
-    min-width: 0; /* Permite que el input se encoja correctamente */
-  }
-  .send-btn {
-    padding: 0 20px;
-  }
-  /* ✨ FIN DE LA CORRECCIÓN ✨ */
+  .message-form{ padding: 10px; gap: 8px; }
+  .send-btn{ height: 42px; padding: 0 14px; }
+  #message-input{ font-size: 15px; }
+  
+  
+  
+  
   
 }
