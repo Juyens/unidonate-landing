@@ -167,4 +167,5 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   header nav{ display:none; position:absolute; right:18px; top:calc(100% + 8px); z-index: 60; }
   .profile-grid { grid-template-columns: 1fr; }
   .fields-section { grid-template-columns: 1fr; }
+  
 }

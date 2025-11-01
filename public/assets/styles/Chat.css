@@ -175,4 +175,9 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   .menu-toggle{ display:inline-block }
   .chat-container { padding: 16px 0; }
   .chat-window { height: calc(100vh - 69px); border-radius: 0; } /* Ocupa toda la pantalla en móvil */
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
+  }
 }

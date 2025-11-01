@@ -163,4 +163,9 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   header nav.open { display: flex; }
   .help-page { padding: 24px 16px; }
   .chat-container { height: 80vh; }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
+  }
 }

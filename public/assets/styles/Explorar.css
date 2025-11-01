@@ -6,7 +6,7 @@ html,body{ margin:0; padding:0 }
   --line:#e5e7eb; --bg:#ffffff; --shadow:0 12px 28px rgba(0,0,0,.08);
   --radius:16px; --orange: #FFDAB0; --yellow: #FFFACD;
 }
-body{ font-family:system-ui,-apple-system,sans-serif; color:var(--ink); background: linear-gradient(160deg, #dcfce7 0%, #dbeafe 100%);}
+body{ font-family:system-ui,-apple-system,sans-serif; color:var(--ink); background: linear-gradient(180deg, #AAF0D1, #DCD0FF);;}
 a{ color:inherit; text-decoration:none }
 
 /* ===== Header y Popover (Reutilizado) ===== */
@@ -44,7 +44,7 @@ header nav .Perfil{ background:var(--primary); color:#fff; padding:8px 16px; bor
 main { max-width: 1200px; margin: 0 auto; padding: 24px; }
 
 /* Barra Superior con Filtros */
-.explore-header { background-color: #d1fae5; padding: 24px; border-radius: var(--radius); margin-bottom: 32px; }
+.explore-header { background-color: transparent; padding: 24px; border-radius: var(--radius); margin-bottom: 32px; }
 .explore-header h1 { font-size: 36px; font-weight: 800; margin: 0 0 16px; }
 .filters { display: flex; flex-wrap: wrap; gap: 16px; }
 
@@ -174,5 +174,8 @@ footer small{ grid-area:copy; color:#8F8C8C; text-align:center }
   .dropdown-toggle { width: 100%; }
 }
 @media (max-width: 600px) {
-  footer { grid-template-columns: 1fr; grid-template-areas: "logo" "desc" "links1" "links2" "links3" "line" "copy"; }
+  footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
+  }
 }

@@ -115,6 +115,10 @@ footer small{ grid-area:copy; text-align:center }
   .notifications-header__wrapper { flex-direction: column; align-items: flex-start; }
   .filter-bar { flex-direction: column; align-items: flex-start; }
   .header-actions, .search-controls { width: 100%; }
+  footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo links1" "desc links1" "links2 links3" "line line" "copy copy";
+  }
 }
 @media (max-width: 600px) {
   .notification-item { flex-direction: column; align-items: flex-start; }
